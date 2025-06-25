@@ -1,0 +1,29 @@
+{
+  "displayName": "Astoria Government Bot",
+  "license": "AGPL-3.0 license",
+  "description": "Astron is the primary bot of the Astron Collection — a modular suite of advanced Discord applications.",
+  "author": "Astoria Government",
+  "email": "discord@astoria-gouv.org",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Astoria-Government/astoria-bot.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/Astoria-Government/astoria-bot/issues"
+  },
+
+  "homepage": "https://github.com/Astoria-Government/astoria-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.20.0"
+  }
+}
