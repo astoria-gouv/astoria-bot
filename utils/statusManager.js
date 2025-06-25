@@ -3,25 +3,16 @@
 import { ActivityType } from "discord.js";
 
 export function startPresenceCycle(client) {
-  let toggle = true;
+  const userCount = client.guilds.cache.reduce((acc, guild) => acc + (guild.memberCount || 0), 0);
 
-  setInterval(() => {
-    const guildCount = client.guilds.cache.size;
-    const userCount = client.guilds.cache.reduce((acc, guild) => acc + (guild.memberCount || 0), 0);
+  const presenceText = `${userCount.toLocaleString()} citizens`;
 
-    const presenceText = toggle
-      ? `${guildCount} guilds`
-      : `${userCount.toLocaleString()} users`;
-
-    client.user.setPresence({
-      activities: [{
-        name: presenceText,
-        type: ActivityType.Streaming,
-        url: "https://www.youtube.com/watch?v=jfKfPfyJRdk"
-      }],
-      status: "online",
-    });
-
-    toggle = !toggle;
-  }, 5000);
+  client.user.setPresence({
+    activities: [{
+      name: presenceText,
+      type: ActivityType.Streaming,
+      url: "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+    }],
+    status: "online",
+  });
 }
